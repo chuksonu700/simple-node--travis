@@ -12,6 +12,7 @@ install:
 # Scripts to be run such as tests
 before_script:
   - echo "no tests"
+  - ls 
 
 script:
   - docker --version # print the version for logging
@@ -21,3 +22,4 @@ script:
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push chuksonu/simple-node-travis
+  - ls
