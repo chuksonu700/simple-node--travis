@@ -14,7 +14,7 @@ app.get('/health',(req,res)=>{
   res.send(`I AM VERY HEALTHY 0 ${ranNum}`);
 })
 
-const port = process.env.PORT || 4300
+const port = process.env.PORT || 4040
 
 app.listen(port,()=>{
   console.log(`Server running on http://localhost:${port}`)

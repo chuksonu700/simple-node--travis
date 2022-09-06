@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-express-app
+  labels:
+    app: simple-express-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: simple-express-app
+  template:
+    metadata:
+      labels:
+        app: simple-express-app
+    spec:
+      containers:
+      - name: simple-node-travis
+        image: chuksonu/simple-node-travis
+        ports:
+        - containerPort: 80
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 3
+          periodSeconds: 3

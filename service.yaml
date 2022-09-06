@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: simple-express-app
+  labels:
+    run: simple-express-app
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+  selector:
+    run: simple-express-app
