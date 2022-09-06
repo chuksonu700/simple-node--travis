@@ -15,8 +15,8 @@ spec:
         app: my-app-2
     spec:
       containers:
-      - name: simple-express
-        image: YOUR-DOCKER-ID/simple-express
+      - name: simple-node-travis
+        image: chuksonus/simple-node-travis
         ports:
         - containerPort: 8080
         livenessProbe:
