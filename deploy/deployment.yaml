@@ -1,27 +1,27 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: simple-express-app
+  name: my-app-2
   labels:
-    app: simple-express-app
+    app: my-app-2
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: simple-express-app
+      app: my-app-2
   template:
     metadata:
       labels:
-        app: simple-express-app
+        app: my-app-2
     spec:
       containers:
-      - name: simple-node-travis
-        image: chuksonu/simple-node-travis
+      - name: simple-express
+        image: YOUR-DOCKER-ID/simple-express
         ports:
-        - containerPort: 80
+        - containerPort: 8080
         livenessProbe:
           httpGet:
             path: /health
-            port: 4040
+            port: 8080
           initialDelaySeconds: 3
           periodSeconds: 3

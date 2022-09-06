@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - 16
+  - 13
 
 services:
   - docker
@@ -12,14 +12,13 @@ install:
 # Scripts to be run such as tests
 before_script:
   - echo "no tests"
-  - ls 
 
 script:
   - docker --version # print the version for logging
-  - docker build -t simple-node-travis . #add enviroment variable to builds 
-  - docker tag simple-node-travis chuksonu/simple-node-travis:latest
+  - docker build -t simple-node-travis .
+  - docker tag simple-node-travis YOUR_DOCKER_HUB/simple-node-travis
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker push chuksonu/simple-node-travis
-  - ls
+
