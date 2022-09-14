@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: simple-node-travis
-        image: chuksonus/simple-node-travis
+        image: chuksonu/simple-node-travis
         ports:
         - containerPort: 8080
         livenessProbe:
